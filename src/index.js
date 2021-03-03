@@ -1,12 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Route,   BrowserRouter as Router  , Switch} from "react-router-dom";
+import Greeter from './Greeter'
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Switch>
+        <Route path="/apple">
+          <Greeter fruit="Apple" eaten="Core" color="green"></Greeter>
+        </Route>
+        <Route path="/banana">
+          <Greeter fruit="Banana" eaten="Skin" color="yellow" ></Greeter>
+        </Route>
+        <Route path="/orange">
+          <Greeter fruit="Orange" eaten="Peel" color="orange" ></Greeter>
+        </Route>
+      </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
